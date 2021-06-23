@@ -6,14 +6,14 @@ const Guide = styled.div`
   ${props =>
     props.defaultStyles
       ? `
-  max-width: 331px;
-  min-width: 150px;
-  padding-right: 40px;
-  border-radius: ${props.rounded}px;
-  background-color: #fff;
-  padding: 24px 30px;
-  box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.3);
-  color: inherit;
+      max-width: 331px;
+      min-width: 150px;
+      padding-right: 40px;
+      border-radius: ${props.rounded}px;
+      background-color: #fff;
+      padding: 24px 30px;
+      box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.3);
+      color: inherit;
   `
       : ''}
   position: fixed;
@@ -21,7 +21,6 @@ const Guide = styled.div`
   top: 0;
   left: 0;
   z-index: 1000000;
-
   transform: ${props => {
     const {
       targetTop,
@@ -92,10 +91,10 @@ const Guide = styled.div`
         : targetTop - padding
       const y = hY > padding ? hY : padding
       const coords = {
-        top: [x, targetTop - helperHeight - padding * 2],
-        right: [targetRight + padding * 2, y],
-        bottom: [x, targetBottom + padding * 2],
-        left: [targetLeft - helperWidth - padding * 2, y],
+        top: [x, targetTop - 30 - helperHeight - padding * 2],
+        right: [targetRight + 30 + padding * 2, y],
+        bottom: [x, targetBottom + 30 + padding * 2],
+        left: [targetLeft - helperWidth - 30 - padding * 2, y],
         center: [
           windowWidth / 2 - helperWidth / 2,
           windowHeight / 2 - helperHeight / 2,
