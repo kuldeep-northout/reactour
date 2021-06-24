@@ -34,8 +34,8 @@ const StyledLink = styled(Link)`
     props.bg
       ? 'white'
       : props.color
-        ? themeColors[props.color]
-        : themeColors.black};
+      ? themeColors[props.color]
+      : themeColors.black};
   ${props =>
     props.nospaces &&
     `

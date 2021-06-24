@@ -7,6 +7,7 @@ import useMutationObserver from '@rooks/use-mutation-observer'
 import FocusLock from 'react-focus-lock'
 import { GlobalStyle } from './style'
 import Portal from './Portal'
+import Button from './components/Button'
 import {
   SvgMask,
   Guide,
@@ -289,6 +290,90 @@ function Tour({
           highlightedMaskClassName
         )}
       />
+      {(showButtons || showNavigation) && (
+        <Controls data-tour-elem="controls">
+          {showButtons && (
+            /* <Arrow
+              onClick={prevStep}
+              disabled={current === 0}
+              // label={prevButton ? prevButton : null}
+              label={prevButton ? prevButton : null}
+            /> */
+            <Button
+              onClick={prevStep}
+              label="Prev"
+              classes="TourPrevButton"
+              disabled={current === 0}
+            ></Button>
+          )}
+
+          {/* {showNavigation && (
+            <Navigation
+              data-tour-elem="navigation"
+              aria-hidden={!a11yOptions.showNavigationScreenReaders}
+            >
+              {steps.map((s, i) => (
+                <Dot
+                  key={`${s.selector ? s.selector : 'undef'}_${i}`}
+                  onClick={() => goTo(i)}
+                  current={current}
+                  index={i}
+                  disabled={current === i || disableDotsNavigation}
+                  showNumber={showNavigationNumber}
+                  data-tour-elem="dot"
+                  className={cn(CN.dot.base, {
+                    [CN.dot.active]: current === i,
+                  })}
+                  aria-label={s.navDotAriaLabel}
+                />
+              ))}
+            </Navigation>
+          )} */}
+          {showButtons && (
+            <Button
+              onClick={
+                current === steps.length - 1
+                  ? lastStepNextButton
+                    ? close
+                    : () => {}
+                  : typeof nextStep === 'function'
+                  ? nextStep
+                  : this.nextStep
+              }
+              label="Next"
+              classes="TourNextButton"
+              disabled={!lastStepNextButton && current === steps.length - 1}
+            ></Button>
+            /* <Arrow
+              onClick={
+                current === steps.length - 1
+                  ? lastStepNextButton
+                    ? close
+                    : () => {}
+                  : typeof nextStep === 'function'
+                  ? nextStep
+                  : this.nextStep
+              }
+              disabled={!lastStepNextButton && current === steps.length - 1}
+              inverted
+              label={
+                lastStepNextButton && current === steps.length - 1
+                  ? lastStepNextButton
+                  : nextButton
+                  ? nextButton
+                  : null
+              }
+            /> */
+          )}
+        </Controls>
+      )}
+      {showCloseButton && (
+        <Close
+          onClick={close}
+          ariaLabel={a11yOptions.closeButtonAriaLabel}
+          className="reactour__close"
+        />
+      )}
       <FocusLock>
         <Guide
           ref={helper}
@@ -338,7 +423,7 @@ function Tour({
                 </Badge>
               )}
 
-              {(showButtons || showNavigation) && (
+              {/* {(showButtons || showNavigation) && (
                 <Controls data-tour-elem="controls">
                   {showButtons && (
                     <Arrow
@@ -403,7 +488,7 @@ function Tour({
                   ariaLabel={a11yOptions.closeButtonAriaLabel}
                   className="reactour__close"
                 />
-              )}
+              )} */}
             </>
           )}
         </Guide>

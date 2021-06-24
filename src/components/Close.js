@@ -24,11 +24,13 @@ Close.propTypes = {
 
 const StyledClose = styled(Close)`
   position: absolute;
-  top: 22px;
-  right: 22px;
-  width: 9px;
-  height: 9px;
-  color: #5e5e5e;
+  top: 5vh;
+  right: 5vw;
+  width: 15px;
+  height: 15px;
+  color: white;
+  position: fixed;
+  z-index: 50000000;
   &:hover {
     color: #000;
   }

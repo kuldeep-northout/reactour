@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react'
+import React, { useState, useEffect, Suspense, lazy, Fragment } from 'react'
 import Tour, { Navigation, Dot, Controls, Arrow } from '../index'
 import 'focus-outline-manager'
 import { GlobalStyle } from './../style'
@@ -126,57 +126,57 @@ function MyCustomHelper({ current, content, totalSteps, gotoStep, close }) {
 const timeout = ms => new Promise(res => setTimeout(res, ms))
 
 const tourConfig = [
-  {
-    selector: '[data-tut="reactour__iso"]',
-    content:
-      "Ok, let's start with the name of the Tour that is about to begin.",
-    actionBefore: async () => {
-      await timeout(5000)
-      console.log('Hola!')
-    },
-  },
-  {
-    selector: '[data-tut="reactour__logo"]',
-    content: 'And this is our cool bus...',
-    position: [20, 20],
-  },
-  {
-    selector: '[data-tut="reactour__copy"]',
-    content: `Keep in mind that you could try and test everything during the Tour.
-      For example, try selecting the highlighted text…`,
-  },
-  {
-    selector: '[data-tut="reactour__style"]',
-    content: function DemoHelperComponent() {
-      return (
-        <div>
-          <Glitch data-glitch="Styled">Styled</Glitch>
-          <Text color="#e5e5e5">
-            The <Tooltip data-tooltip="this helper ⬇">tourist guide</Tooltip>{' '}
-            could be dressed in any way, using custom components, styles and so
-            on…
-          </Text>
-          <Text color="#373737" size=".7em" style={{ marginTop: '.7em' }}>
-            <Link
-              href="http://codepen.io/lbebber/full/ypgql/"
-              color="dark"
-              nospaces
-            >
-              Text effect
-            </Link>{' '}
-            by{' '}
-            <Link href="https://twitter.com/lucasbebber" color="dark" nospaces>
-              Lucas Bebber
-            </Link>
-          </Text>
-        </div>
-      )
-    },
-    style: {
-      backgroundColor: 'black',
-      color: 'white',
-    },
-  },
+  // {
+  //   selector: '[data-tut="reactour__iso"]',
+  //   content:
+  //     "Ok, let's start with the name of the Tour that is about to begin.",
+  //   actionBefore: async () => {
+  //     await timeout(5000)
+  //     console.log('Hola!')
+  //   },
+  // },
+  // {
+  //   selector: '[data-tut="reactour__logo"]',
+  //   content: 'And this is our cool bus...',
+  //   position: [20, 20],
+  // },
+  // {
+  //   selector: '[data-tut="reactour__copy"]',
+  //   content: `Keep in mind that you could try and test everything during the Tour.
+  //     For example, try selecting the highlighted text…`,
+  // },
+  // {
+  //   selector: '[data-tut="reactour__style"]',
+  //   content: function DemoHelperComponent() {
+  //     return (
+  //       <div>
+  //         <Glitch data-glitch="Styled">Styled</Glitch>
+  //         <Text color="#e5e5e5">
+  //           The <Tooltip data-tooltip="this helper ⬇">tourist guide</Tooltip>{' '}
+  //           could be dressed in any way, using custom components, styles and so
+  //           on…
+  //         </Text>
+  //         <Text color="#373737" size=".7em" style={{ marginTop: '.7em' }}>
+  //           <Link
+  //             href="http://codepen.io/lbebber/full/ypgql/"
+  //             color="dark"
+  //             nospaces
+  //           >
+  //             Text effect
+  //           </Link>{' '}
+  //           by{' '}
+  //           <Link href="https://twitter.com/lucasbebber" color="dark" nospaces>
+  //             Lucas Bebber
+  //           </Link>
+  //         </Text>
+  //       </div>
+  //     )
+  //   },
+  //   style: {
+  //     backgroundColor: 'black',
+  //     color: 'white',
+  //   },
+  // },
   {
     selector: '[data-tut="reactour__goTo"]',
     content: function DemoHelperComponent({ goTo }) {
@@ -185,25 +185,42 @@ const tourConfig = [
       }
 
       return (
-        <div>
-          If you wanna go anywhere, skipping places, it is absolutely possible.
-          <br />
-          &quot;Oh, I forgot something inside the bus&hellip;&quot;{' '}
-          <button
+        <Fragment>
+          {/* <span
             style={{
-              border: '1px solid #f7f7f7',
-              background: 'none',
-              padding: '.3em .7em',
-              fontSize: 'inherit',
-              display: 'block',
-              cursor: 'pointer',
-              margin: '1em auto',
+              zIndex: 1000000000,
+              borderRight: '30px solid white',
+              borderTop: ' 30px solid transparent',
+              borderBottom: '30px solid transparent',
+              // position: absolute,
+              top: '20px',
+              left: '-29px',
+              width: 0,
+              height: 0,
+              position: 'absolute',
             }}
-            onClick={() => goTo(1)}
-          >
-            Please go back to 🚌
-          </button>
-        </div>
+          ></span> */}
+          <div>
+            If you wanna go anywhere, skipping places, it is absolutely
+            possible.
+            <br />
+            &quot;Oh, I forgot something inside the bus&hellip;&quot;{' '}
+            <button
+              style={{
+                border: '1px solid #f7f7f7',
+                background: 'none',
+                padding: '.3em .7em',
+                fontSize: 'inherit',
+                display: 'block',
+                cursor: 'pointer',
+                margin: '1em auto',
+              }}
+              onClick={() => goTo(1)}
+            >
+              Please go back to 🚌
+            </button>
+          </div>
+        </Fragment>
       )
     },
   },
@@ -221,7 +238,6 @@ const tourConfig = [
         </Text>
       )
     },
-    position: 'left',
   },
   {
     selector: '[data-tut="reactour__scroll"]',
@@ -236,13 +252,6 @@ const tourConfig = [
     selector: '[data-tut="reactour__action"]',
     content:
       'When arrived on each place you could fire an action, like… (look at the console)',
-    action: () =>
-      console.log(`
-                  ------------🏠🏚---------
-      🚌 Arrived to explore these beautiful buildings! 🚌
-                  ------------🏠🏚---------
-   🚧 This action could also fire a method in your Component 🚧
-    `),
   },
   {
     selector: '[data-tut="reactour__state"]',
