@@ -543,10 +543,7 @@ left: -30px; */
 
   var p = pos(helperPosition);
   var l = helperLocation(helperPosition);
-  console.log('targetleft', targetLeft);
-  console.log('helperleft', l[0]);
-  console.log('helperwidth', helperWidth);
-  console.log('helperheight', helperHeight);
+
   if (p == 'center') return '0px';
   if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px';
   if (p == 'bottom') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px';

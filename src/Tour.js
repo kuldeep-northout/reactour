@@ -78,7 +78,6 @@ function Tour({
           mutation.type === 'childList' &&
           mutation.removedNodes.length > 0
         ) {
-          // console.log('Removed node, do something')
         }
       })
     } else {

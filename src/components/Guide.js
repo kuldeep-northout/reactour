@@ -53,7 +53,6 @@ const Guide = styled.div`
 
     const autoPosition = coords => {
       const positionsOrder = hx.bestPositionOf(available)
-      console.log(positionsOrder)
       for (let j = 0; j < positionsOrder.length; j++) {
         if (couldPositionAt(positionsOrder[j])) {
           return coords[positionsOrder[j]]
@@ -108,7 +107,6 @@ const Guide = styled.div`
     }
 
     const p = pos(helperPosition)
-    console.log(p)
 
     return `translate(${Math.round(p[0])}px, ${Math.round(p[1])}px)`
   }};
