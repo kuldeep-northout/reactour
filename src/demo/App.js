@@ -12,9 +12,9 @@ import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 
 import './styles.css'
 
-// const LazyTour = React.lazy(() =>
-//   import(/* webpackChunkName: "reactour" */ '../index')
-// )
+const LazyTour = React.lazy(() =>
+  import(/* webpackChunkName: "reactour" */ '../index')
+)
 
 function App() {
   const [isTourOpen, setOpen] = useState(false)
@@ -39,7 +39,7 @@ function App() {
 
   const disableBody = target => disableBodyScroll(target)
   const enableBody = target => enableBodyScroll(target)
-  const accentColor = 'linear-gradient(to right, #1c8f9e, #5cb7b7)'
+  const accentColor = 'white'
   return (
     <>
       <GlobalStyle />
@@ -60,6 +60,7 @@ function App() {
           rounded={5}
           accentColor={accentColor}
           CustomHelper={customComps ? MyCustomHelper : null}
+          showNumber={false}
         />
       </Suspense>
     </>
@@ -179,6 +180,7 @@ const tourConfig = [
   // },
   {
     selector: '[data-tut="reactour__goTo"]',
+    position: 'bottom',
     content: function DemoHelperComponent({ goTo }) {
       DemoHelperComponent.propTypes = {
         goTo: PropTypes.func.isRequired,
@@ -186,20 +188,6 @@ const tourConfig = [
 
       return (
         <Fragment>
-          {/* <span
-            style={{
-              zIndex: 1000000000,
-              borderRight: '30px solid white',
-              borderTop: ' 30px solid transparent',
-              borderBottom: '30px solid transparent',
-              // position: absolute,
-              top: '20px',
-              left: '-29px',
-              width: 0,
-              height: 0,
-              position: 'absolute',
-            }}
-          ></span> */}
           <div>
             If you wanna go anywhere, skipping places, it is absolutely
             possible.

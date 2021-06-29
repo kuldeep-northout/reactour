@@ -7,6 +7,7 @@ import useMutationObserver from '@rooks/use-mutation-observer'
 import FocusLock from 'react-focus-lock'
 import { GlobalStyle } from './style'
 import Portal from './Portal'
+import Pointer from './components/Pointer'
 import Button from './components/Button'
 import {
   SvgMask,
@@ -401,6 +402,25 @@ function Tour({
           role="dialog"
           aria-labelledby={a11yOptions.ariaLabelledBy}
         >
+          <Pointer
+            windowWidth={state.w}
+            windowHeight={state.h}
+            targetWidth={state.width}
+            targetHeight={state.height}
+            targetTop={state.top}
+            targetLeft={state.left}
+            targetRight={state.right}
+            targetBottom={state.bottom}
+            helperWidth={state.helperWidth}
+            helperHeight={state.helperHeight}
+            helperPosition={state.helperPosition}
+            padding={maskSpace}
+            background={
+              steps[current].backgroundColor
+                ? steps[current].backgroundColor
+                : 'white'
+            }
+          />
           {CustomHelper ? (
             <CustomHelper
               current={current}

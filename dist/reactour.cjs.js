@@ -297,6 +297,9 @@ Close.propTypes = {
 var StyledClose = styled__default(Close)(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 5vh;\n  right: 5vw;\n  width: 15px;\n  height: 15px;\n  color: white;\n  position: fixed;\n  z-index: 50000000;\n  &:hover {\n    color: #000;\n  }\n"])));
 
 function getNodeRect(node) {
+  if(!node){
+    return{}
+  }
   var _node$getBoundingClie = node.getBoundingClientRect(),
       top = _node$getBoundingClie.top,
       right = _node$getBoundingClie.right,

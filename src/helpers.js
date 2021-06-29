@@ -1,4 +1,7 @@
 export function getNodeRect(node) {
+  if (!node) {
+    return {}
+  }
   const {
     top,
     right,
