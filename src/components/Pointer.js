@@ -411,11 +411,12 @@ const Pointer = styled.div`
     console.log('helperheight', helperHeight)
 
     if (p == 'center') return '0px'
-    if (p == 'top') return targetLeft > l[0] ? targetLeft + 'px' : '2px'
-    if (p == 'bottom') return targetLeft > l[0] ? targetLeft + 'px' : '2px'
+    if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px'
+    if (p == 'bottom')
+      return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px'
     if (p == 'right') return -29 + 'px'
     if (p == 'left') return helperWidth - 2 + 'px'
-    return 'rotate(0deg)'
+    return '0px'
   }};
 `
 
