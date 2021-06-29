@@ -191,104 +191,115 @@ function Portal(_ref) {
   return createPortal(children, ref.current);
 }
 
-var _templateObject$1;
-
-function Button(_ref) {
-  var onClick = _ref.onClick,
-      label = _ref.label,
-      classes = _ref.classes,
-      disabled = _ref.disabled;
-  return /*#__PURE__*/React.createElement("button", {
-    className: "btn ".concat(classes),
-    onClick: onClick,
-    disabled: disabled
-  }, label);
-}
-
-Button.propTypes = {
-  onClick: PropTypes.func.isRequired,
-  label: PropTypes.string,
-  classes: PropTypes.string,
-  disabled: PropTypes.bool
-};
-var StyledButton = styled(Button)(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  margin-left: 10px;\n"])));
-
-var _templateObject$2;
-var SvgButton = styled.button(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  display: block;\n  padding: 0;\n  border: 0;\n  background: none;\n  font-size: 0;\n  cursor: ", ";\n"])), function (props) {
-  return props.disabled ? 'not-allowed' : 'pointer';
+Object.defineProperty(exports, "__esModule", {
+  value: true
 });
-
-var _templateObject$3, _templateObject2;
-var Label = styled.span(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  font-size: 12px;\n  line-height: 1;\n"])));
-
-function Arrow(_ref) {
-  var className = _ref.className,
-      onClick = _ref.onClick,
-      inverted = _ref.inverted,
-      label = _ref.label,
-      disabled = _ref.disabled;
-  return /*#__PURE__*/React.createElement(SvgButton, {
-    className: className,
-    onClick: onClick,
-    "data-tour-elem": "".concat(inverted ? 'right' : 'left', "-arrow"),
-    disabled: disabled
-  }, label ? /*#__PURE__*/React.createElement(Label, null, label) : /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 18.4 14.4"
-  }, /*#__PURE__*/React.createElement("path", {
-    d: inverted ? 'M17 7.2H1M10.8 1L17 7.2l-6.2 6.2' : 'M1.4 7.2h16M7.6 1L1.4 7.2l6.2 6.2',
-    fill: "none",
-    stroke: "currentColor",
-    strokeWidth: "2",
-    strokeLinecap: "round",
-    strokeMiterlimit: "10"
-  })));
-}
-
-Arrow.propTypes = {
-  className: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  inverted: PropTypes.bool,
-  label: PropTypes.node,
-  disabled: PropTypes.bool
-};
-var Arrow$1 = styled(Arrow)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  color: ", ";\n  ", ";\n  ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"])), function (props) {
-  return props.disabled ? '#caccce' : '#646464';
-}, function (props) {
-  return props.inverted ? 'margin-left: 24px;' : 'margin-right: 24px;';
-}, function (props) {
-  return !props.label && "\n    width: 16px;\n    height: 12px;\n    flex: 0 0 16px;\n  ";
-}, function (props) {
-  return props.disabled ? '#caccce' : '#000';
+Object.defineProperty(exports, "Shake", {
+  enumerable: true,
+  get: function get() {
+    return _Shake["default"];
+  }
 });
+Object.defineProperty(exports, "Shaking", {
+  enumerable: true,
+  get: function get() {
+    return _Shaking["default"];
+  }
+});
+Object.defineProperty(exports, "shakes", {
+  enumerable: true,
+  get: function get() {
+    return _shakes["default"];
+  }
+});
+exports["default"] = exports.ShakeCrazy = exports.ShakeRotate = exports.ShakeVertical = exports.ShakeHorizontal = exports.ShakeHard = exports.ShakeSlow = exports.ShakeLittle = void 0;
 
-var _templateObject$4;
+var _react = _interopRequireDefault(require("react"));
 
-function Close(_ref) {
-  var className = _ref.className,
-      onClick = _ref.onClick,
-      ariaLabel = _ref.ariaLabel;
-  return /*#__PURE__*/React.createElement(SvgButton, {
-    className: className,
-    onClick: onClick,
-    "aria-label": ariaLabel
-  }, /*#__PURE__*/React.createElement("svg", {
-    viewBox: "0 0 9.1 9.1",
-    "aria-hidden": true,
-    role: "presentation"
-  }, /*#__PURE__*/React.createElement("path", {
-    fill: "currentColor",
-    d: "M5.9 4.5l2.8-2.8c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L4.5 3.1 1.7.3C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4l2.8 2.8L.3 7.4c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3L4.5 6l2.8 2.8c.3.2.5.3.8.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L5.9 4.5z"
-  })));
-}
+var _Shake = _interopRequireDefault(require("./Shake"));
 
-Close.propTypes = {
-  className: PropTypes.string.isRequired,
-  onClick: PropTypes.func.isRequired,
-  ariaLabel: PropTypes.string
+var _Shaking = _interopRequireDefault(require("./Shaking"));
+
+var _shakes = _interopRequireDefault(require("./shakes"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
+function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+
+var ShakeLittle = function ShakeLittle(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "little"
+  }));
 };
-var StyledClose = styled(Close)(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 5vh;\n  right: 5vw;\n  width: 15px;\n  height: 15px;\n  color: white;\n  position: fixed;\n  z-index: 50000000;\n  &:hover {\n    color: #000;\n  }\n"])));
+
+exports.ShakeLittle = ShakeLittle;
+
+var ShakeSlow = function ShakeSlow(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "slow"
+  }));
+};
+
+exports.ShakeSlow = ShakeSlow;
+
+var ShakeHard = function ShakeHard(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "hard"
+  }));
+};
+
+exports.ShakeHard = ShakeHard;
+
+var ShakeHorizontal = function ShakeHorizontal(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "horizontal"
+  }));
+};
+
+exports.ShakeHorizontal = ShakeHorizontal;
+
+var ShakeVertical = function ShakeVertical(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "vertical"
+  }));
+};
+
+exports.ShakeVertical = ShakeVertical;
+
+var ShakeRotate = function ShakeRotate(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "rotate"
+  }));
+};
+
+exports.ShakeRotate = ShakeRotate;
+
+var ShakeCrazy = function ShakeCrazy(props) {
+  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
+    type: "crazy"
+  }));
+};
+
+exports.ShakeCrazy = ShakeCrazy;
+var _default = {
+  Shake: _Shake["default"],
+  Shaking: _Shaking["default"],
+  shakes: _shakes["default"],
+  ShakeLittle: ShakeLittle,
+  ShakeSlow: ShakeSlow,
+  ShakeHard: ShakeHard,
+  ShakeHorizontal: ShakeHorizontal,
+  ShakeVertical: ShakeVertical,
+  ShakeRotate: ShakeRotate,
+  ShakeCrazy: ShakeCrazy
+};
+exports["default"] = _default;
 
 function getNodeRect(node) {
+  if (!node) {
+    return {};
+  }
+
   var _node$getBoundingClie = node.getBoundingClientRect(),
       top = _node$getBoundingClie.top,
       right = _node$getBoundingClie.right,
@@ -353,8 +364,400 @@ function getWindow() {
   };
 }
 
+var _templateObject$1;
+var Pointer = styled.div(_templateObject$1 || (_templateObject$1 = _taggedTemplateLiteral(["\n  --reactour-accent: ", ";\n  border-right: 31px solid ", ";\n  border-top: 15px solid transparent;\n  border-bottom: 15px solid transparent;\n  ", "\n  width: 0;\n  height: 0;\n  position: fixed;\n  ", "\n  z-index: 1000000;\n  transform: ", ";\n  top: ", ";\n  left: ", ";\n"])), function (props) {
+  return props.accentColor;
+}, function (props) {
+  return props.background;
+}, ''
+/* top: 20px;
+left: -30px; */
+, ''
+/* top: 0;
+left: -30px; */
+, function (props) {
+  var targetTop = props.targetTop,
+      targetRight = props.targetRight,
+      targetBottom = props.targetBottom,
+      targetLeft = props.targetLeft,
+      windowWidth = props.windowWidth,
+      windowHeight = props.windowHeight,
+      helperWidth = props.helperWidth,
+      helperHeight = props.helperHeight,
+      helperPosition = props.helperPosition,
+      padding = props.padding;
+  var available = {
+    left: targetLeft,
+    right: windowWidth - targetRight,
+    top: targetTop,
+    bottom: windowHeight - targetBottom
+  };
+
+  var couldPositionAt = function couldPositionAt(position) {
+    return available[position] > (isHoriz(position) ? helperWidth + padding * 2 : helperHeight + padding * 2);
+  };
+
+  var autoPosition = function autoPosition() {
+    var positionsOrder = bestPositionOf(available);
+
+    for (var j = 0; j < positionsOrder.length; j++) {
+      if (couldPositionAt(positionsOrder[j])) {
+        return positionsOrder[j];
+      }
+    }
+
+    return 'center';
+  };
+
+  var pos = function pos(helperPosition) {
+    if (Array.isArray(helperPosition)) {
+      var isOutX = isOutsideX(helperPosition[0], windowWidth);
+      var isOutY = isOutsideY(helperPosition[1], windowHeight);
+
+      var warn = function warn(axis, num) {
+        console.warn("".concat(axis, ":").concat(num, " is outside window, falling back to center"));
+      };
+
+      if (isOutX) warn('x', helperPosition[0]);
+      if (isOutY) warn('y', helperPosition[1]);
+      return [isOutX ? windowWidth / 2 - helperWidth / 2 : helperPosition[0], isOutY ? windowHeight / 2 - helperHeight / 2 : helperPosition[1]];
+    }
+
+    if (helperPosition === 'center' || couldPositionAt(helperPosition)) {
+      return helperPosition;
+    }
+
+    return autoPosition();
+  };
+
+  var p = pos(helperPosition);
+  if (p == 'center') return 'rotate(0deg)';
+  if (p == 'top') return 'rotate(270deg)';
+  if (p == 'bottom') return 'rotate(90deg)';
+  if (p == 'right') return 'rotate(0deg)';
+  if (p == 'left') return 'rotate(180deg)';
+  return 'rotate(0deg)';
+}, function (props) {
+  var targetTop = props.targetTop,
+      targetRight = props.targetRight,
+      targetBottom = props.targetBottom,
+      targetLeft = props.targetLeft,
+      windowWidth = props.windowWidth,
+      windowHeight = props.windowHeight,
+      helperWidth = props.helperWidth,
+      helperHeight = props.helperHeight,
+      helperPosition = props.helperPosition,
+      padding = props.padding;
+  var available = {
+    left: targetLeft,
+    right: windowWidth - targetRight,
+    top: targetTop,
+    bottom: windowHeight - targetBottom
+  };
+
+  var couldPositionAt = function couldPositionAt(position) {
+    return available[position] > (isHoriz(position) ? helperWidth + padding * 2 : helperHeight + padding * 2);
+  };
+
+  var autoPosition = function autoPosition() {
+    var positionsOrder = bestPositionOf(available);
+
+    for (var j = 0; j < positionsOrder.length; j++) {
+      if (couldPositionAt(positionsOrder[j])) {
+        return positionsOrder[j];
+      }
+    }
+
+    return 'center';
+  };
+
+  var pos = function pos(helperPosition) {
+    if (Array.isArray(helperPosition)) {
+      var isOutX = isOutsideX(helperPosition[0], windowWidth);
+      var isOutY = isOutsideY(helperPosition[1], windowHeight);
+
+      var warn = function warn(axis, num) {
+        console.warn("".concat(axis, ":").concat(num, " is outside window, falling back to center"));
+      };
+
+      if (isOutX) warn('x', helperPosition[0]);
+      if (isOutY) warn('y', helperPosition[1]);
+      return [isOutX ? windowWidth / 2 - helperWidth / 2 : helperPosition[0], isOutY ? windowHeight / 2 - helperHeight / 2 : helperPosition[1]];
+    }
+
+    if (helperPosition === 'center' || couldPositionAt(helperPosition)) {
+      return helperPosition;
+    }
+
+    return autoPosition();
+  };
+
+  var autoPositionhelper = function autoPositionhelper(coords) {
+    var positionsOrder = bestPositionOf(available);
+
+    for (var j = 0; j < positionsOrder.length; j++) {
+      if (couldPositionAt(positionsOrder[j])) {
+        return coords[positionsOrder[j]];
+      }
+    }
+
+    return coords.center;
+  };
+
+  var helperLocation = function helperLocation(helperPosition) {
+    if (Array.isArray(helperPosition)) {
+      var isOutX = isOutsideX(helperPosition[0], windowWidth);
+      var isOutY = isOutsideY(helperPosition[1], windowHeight);
+
+      var warn = function warn(axis, num) {
+        console.warn("".concat(axis, ":").concat(num, " is outside window, falling back to center"));
+      };
+
+      if (isOutX) warn('x', helperPosition[0]);
+      if (isOutY) warn('y', helperPosition[1]);
+      return [isOutX ? windowWidth / 2 - helperWidth / 2 : helperPosition[0], isOutY ? windowHeight / 2 - helperHeight / 2 : helperPosition[1]];
+    }
+
+    var hX = isOutsideX(targetLeft + helperWidth, windowWidth) ? isOutsideX(targetRight + padding, windowWidth) ? targetRight - helperWidth : targetRight - helperWidth + padding : targetLeft - padding;
+    var x = hX > padding ? hX : padding;
+    var hY = isOutsideY(targetTop + helperHeight, windowHeight) ? isOutsideY(targetBottom + padding, windowHeight) ? targetBottom - helperHeight : targetBottom - helperHeight + padding : targetTop - padding;
+    var y = hY > padding ? hY : padding;
+    var coords = {
+      top: [x, targetTop - 30 - helperHeight - padding * 2],
+      right: [targetRight + 30 + padding * 2, y],
+      bottom: [x, targetBottom + 30 + padding * 2],
+      left: [targetLeft - helperWidth - 30 - padding * 2, y],
+      center: [windowWidth / 2 - helperWidth / 2, windowHeight / 2 - helperHeight / 2]
+    };
+
+    if (helperPosition === 'center' || couldPositionAt(helperPosition)) {
+      return coords[helperPosition];
+    }
+
+    return autoPositionhelper(coords);
+  };
+
+  var p = pos(helperPosition);
+  var l = helperLocation(helperPosition);
+  if (p == 'center') return '0px';
+  if (p == 'top') return helperHeight - 2 + 'px';
+  if (p == 'bottom') return '-30px';
+  if (p == 'right') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 2 + 'px';
+  if (p == 'left') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 2 + 'px';
+  return 'rotate(0deg)';
+}, function (props) {
+  var targetTop = props.targetTop,
+      targetRight = props.targetRight,
+      targetBottom = props.targetBottom,
+      targetLeft = props.targetLeft,
+      windowWidth = props.windowWidth,
+      windowHeight = props.windowHeight,
+      helperWidth = props.helperWidth,
+      helperHeight = props.helperHeight,
+      helperPosition = props.helperPosition,
+      padding = props.padding;
+  var available = {
+    left: targetLeft,
+    right: windowWidth - targetRight,
+    top: targetTop,
+    bottom: windowHeight - targetBottom
+  };
+
+  var couldPositionAt = function couldPositionAt(position) {
+    return available[position] > (isHoriz(position) ? helperWidth + padding * 2 : helperHeight + padding * 2);
+  };
+
+  var autoPosition = function autoPosition() {
+    var positionsOrder = bestPositionOf(available);
+
+    for (var j = 0; j < positionsOrder.length; j++) {
+      if (couldPositionAt(positionsOrder[j])) {
+        return positionsOrder[j];
+      }
+    }
+
+    return 'center';
+  };
+
+  var pos = function pos(helperPosition) {
+    if (Array.isArray(helperPosition)) {
+      var isOutX = isOutsideX(helperPosition[0], windowWidth);
+      var isOutY = isOutsideY(helperPosition[1], windowHeight);
+
+      var warn = function warn(axis, num) {
+        console.warn("".concat(axis, ":").concat(num, " is outside window, falling back to center"));
+      };
+
+      if (isOutX) warn('x', helperPosition[0]);
+      if (isOutY) warn('y', helperPosition[1]);
+      return [isOutX ? windowWidth / 2 - helperWidth / 2 : helperPosition[0], isOutY ? windowHeight / 2 - helperHeight / 2 : helperPosition[1]];
+    }
+
+    if (helperPosition === 'center' || couldPositionAt(helperPosition)) {
+      return helperPosition;
+    }
+
+    return autoPosition();
+  };
+
+  var autoPositionhelper = function autoPositionhelper(coords) {
+    var positionsOrder = bestPositionOf(available);
+
+    for (var j = 0; j < positionsOrder.length; j++) {
+      if (couldPositionAt(positionsOrder[j])) {
+        return coords[positionsOrder[j]];
+      }
+    }
+
+    return coords.center;
+  };
+
+  var helperLocation = function helperLocation(helperPosition) {
+    if (Array.isArray(helperPosition)) {
+      var isOutX = isOutsideX(helperPosition[0], windowWidth);
+      var isOutY = isOutsideY(helperPosition[1], windowHeight);
+
+      var warn = function warn(axis, num) {
+        console.warn("".concat(axis, ":").concat(num, " is outside window, falling back to center"));
+      };
+
+      if (isOutX) warn('x', helperPosition[0]);
+      if (isOutY) warn('y', helperPosition[1]);
+      return [isOutX ? windowWidth / 2 - helperWidth / 2 : helperPosition[0], isOutY ? windowHeight / 2 - helperHeight / 2 : helperPosition[1]];
+    }
+
+    var hX = isOutsideX(targetLeft + helperWidth, windowWidth) ? isOutsideX(targetRight + padding, windowWidth) ? targetRight - helperWidth : targetRight - helperWidth + padding : targetLeft - padding;
+    var x = hX > padding ? hX : padding;
+    var hY = isOutsideY(targetTop + helperHeight, windowHeight) ? isOutsideY(targetBottom + padding, windowHeight) ? targetBottom - helperHeight : targetBottom - helperHeight + padding : targetTop - padding;
+    var y = hY > padding ? hY : padding;
+    var coords = {
+      top: [x, targetTop - 30 - helperHeight - padding * 2],
+      right: [targetRight + 30 + padding * 2, y],
+      bottom: [x, targetBottom + 30 + padding * 2],
+      left: [targetLeft - helperWidth - 30 - padding * 2, y],
+      center: [windowWidth / 2 - helperWidth / 2, windowHeight / 2 - helperHeight / 2]
+    };
+
+    if (helperPosition === 'center' || couldPositionAt(helperPosition)) {
+      return coords[helperPosition];
+    }
+
+    return autoPositionhelper(coords);
+  };
+
+  var p = pos(helperPosition);
+  var l = helperLocation(helperPosition);
+  console.log('targetleft', targetLeft);
+  console.log('helperleft', l[0]);
+  console.log('helperwidth', helperWidth);
+  console.log('helperheight', helperHeight);
+  if (p == 'center') return '0px';
+  if (p == 'top') return targetLeft > l[0] ? targetLeft + 'px' : '2px';
+  if (p == 'bottom') return targetLeft > l[0] ? targetLeft + 'px' : '2px';
+  if (p == 'right') return -29 + 'px';
+  if (p == 'left') return helperWidth - 2 + 'px';
+  return 'rotate(0deg)';
+});
+
+var _templateObject$2;
+
+function Button(_ref) {
+  var onClick = _ref.onClick,
+      label = _ref.label,
+      classes = _ref.classes,
+      disabled = _ref.disabled;
+  return /*#__PURE__*/React.createElement("button", {
+    className: "btn ".concat(classes),
+    onClick: onClick,
+    disabled: disabled
+  }, label);
+}
+
+Button.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  label: PropTypes.string,
+  classes: PropTypes.string,
+  disabled: PropTypes.bool
+};
+var StyledButton = styled(Button)(_templateObject$2 || (_templateObject$2 = _taggedTemplateLiteral(["\n  margin-left: 10px;\n"])));
+
+var _templateObject$3;
+var SvgButton = styled.button(_templateObject$3 || (_templateObject$3 = _taggedTemplateLiteral(["\n  display: block;\n  padding: 0;\n  border: 0;\n  background: none;\n  font-size: 0;\n  cursor: ", ";\n"])), function (props) {
+  return props.disabled ? 'not-allowed' : 'pointer';
+});
+
+var _templateObject$4, _templateObject2;
+var Label = styled.span(_templateObject$4 || (_templateObject$4 = _taggedTemplateLiteral(["\n  font-size: 12px;\n  line-height: 1;\n"])));
+
+function Arrow(_ref) {
+  var className = _ref.className,
+      onClick = _ref.onClick,
+      inverted = _ref.inverted,
+      label = _ref.label,
+      disabled = _ref.disabled;
+  return /*#__PURE__*/React.createElement(SvgButton, {
+    className: className,
+    onClick: onClick,
+    "data-tour-elem": "".concat(inverted ? 'right' : 'left', "-arrow"),
+    disabled: disabled
+  }, label ? /*#__PURE__*/React.createElement(Label, null, label) : /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 18.4 14.4"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: inverted ? 'M17 7.2H1M10.8 1L17 7.2l-6.2 6.2' : 'M1.4 7.2h16M7.6 1L1.4 7.2l6.2 6.2',
+    fill: "none",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeMiterlimit: "10"
+  })));
+}
+
+Arrow.propTypes = {
+  className: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  inverted: PropTypes.bool,
+  label: PropTypes.node,
+  disabled: PropTypes.bool
+};
+var Arrow$1 = styled(Arrow)(_templateObject2 || (_templateObject2 = _taggedTemplateLiteral(["\n  color: ", ";\n  ", ";\n  ", ";\n\n  &:hover {\n    color: ", ";\n  }\n"])), function (props) {
+  return props.disabled ? '#caccce' : '#646464';
+}, function (props) {
+  return props.inverted ? 'margin-left: 24px;' : 'margin-right: 24px;';
+}, function (props) {
+  return !props.label && "\n    width: 16px;\n    height: 12px;\n    flex: 0 0 16px;\n  ";
+}, function (props) {
+  return props.disabled ? '#caccce' : '#000';
+});
+
 var _templateObject$5;
-var Guide = styled.div(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  --reactour-accent: ", ";\n  ", "\n  position: fixed;\n  transition: transform 0.3s;\n  top: 0;\n  left: 0;\n  z-index: 1000000;\n  transform: ", ";\n"])), function (props) {
+
+function Close(_ref) {
+  var className = _ref.className,
+      onClick = _ref.onClick,
+      ariaLabel = _ref.ariaLabel;
+  return /*#__PURE__*/React.createElement(SvgButton, {
+    className: className,
+    onClick: onClick,
+    "aria-label": ariaLabel
+  }, /*#__PURE__*/React.createElement("svg", {
+    viewBox: "0 0 9.1 9.1",
+    "aria-hidden": true,
+    role: "presentation"
+  }, /*#__PURE__*/React.createElement("path", {
+    fill: "currentColor",
+    d: "M5.9 4.5l2.8-2.8c.4-.4.4-1 0-1.4-.4-.4-1-.4-1.4 0L4.5 3.1 1.7.3C1.3-.1.7-.1.3.3c-.4.4-.4 1 0 1.4l2.8 2.8L.3 7.4c-.4.4-.4 1 0 1.4.2.2.4.3.7.3s.5-.1.7-.3L4.5 6l2.8 2.8c.3.2.5.3.8.3s.5-.1.7-.3c.4-.4.4-1 0-1.4L5.9 4.5z"
+  })));
+}
+
+Close.propTypes = {
+  className: PropTypes.string.isRequired,
+  onClick: PropTypes.func.isRequired,
+  ariaLabel: PropTypes.string
+};
+var StyledClose = styled(Close)(_templateObject$5 || (_templateObject$5 = _taggedTemplateLiteral(["\n  position: absolute;\n  top: 5vh;\n  right: 5vw;\n  width: 15px;\n  height: 15px;\n  color: white;\n  position: fixed;\n  z-index: 50000000;\n  &:hover {\n    color: #000;\n  }\n"])));
+
+var _templateObject$6;
+var Guide = styled.div(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  --reactour-accent: ", ";\n  ", "\n  position: fixed;\n  transition: transform 0.3s;\n  top: 0;\n  left: 0;\n  z-index: 1000000;\n  transform: ", ";\n"])), function (props) {
   return props.accentColor;
 }, function (props) {
   return props.defaultStyles ? "\n      max-width: 331px;\n      min-width: 150px;\n      padding-right: 40px;\n      border-radius: ".concat(props.rounded, "px;\n      background-color: #fff;\n      padding: 24px 30px;\n      box-shadow: 0 0.5em 3em rgba(0, 0, 0, 0.3);\n      color: inherit;\n  ") : '';
@@ -382,6 +785,7 @@ var Guide = styled.div(_templateObject$5 || (_templateObject$5 = _taggedTemplate
 
   var autoPosition = function autoPosition(coords) {
     var positionsOrder = bestPositionOf(available);
+    console.log(positionsOrder);
 
     for (var j = 0; j < positionsOrder.length; j++) {
       if (couldPositionAt(positionsOrder[j])) {
@@ -426,24 +830,25 @@ var Guide = styled.div(_templateObject$5 || (_templateObject$5 = _taggedTemplate
   };
 
   var p = pos(helperPosition);
+  console.log(p);
   return "translate(".concat(Math.round(p[0]), "px, ").concat(Math.round(p[1]), "px)");
 });
 
-var _templateObject$6;
-var Badge = styled.span(_templateObject$6 || (_templateObject$6 = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: monospace;\n  background: var(--reactour-accent);\n  background: ", ";\n  height: 1.875em;\n  line-height: 2;\n  padding-left: 0.8125em;\n  padding-right: 0.8125em;\n  font-size: 1em;\n  border-radius: 1.625em;\n  color: white;\n  text-align: center;\n  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);\n  top: -0.8125em;\n  left: -0.8125em;\n"])), function (props) {
+var _templateObject$7;
+var Badge = styled.span(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  position: absolute;\n  font-family: monospace;\n  background: var(--reactour-accent);\n  background: ", ";\n  height: 1.875em;\n  line-height: 2;\n  padding-left: 0.8125em;\n  padding-right: 0.8125em;\n  font-size: 1em;\n  border-radius: 1.625em;\n  color: white;\n  text-align: center;\n  box-shadow: 0 0.25em 0.5em rgba(0, 0, 0, 0.3);\n  top: -0.8125em;\n  left: -0.8125em;\n"])), function (props) {
   return props.accentColor;
 });
 
-var _templateObject$7;
-var Controls = styled.div(_templateObject$7 || (_templateObject$7 = _taggedTemplateLiteral(["\n  ", "\n  position:fixed;\n  margin-top: 24px;\n  bottom: 10vh;\n  right: 10vw;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000000;\n  display: flex;\n"])), ''
+var _templateObject$8;
+var Controls = styled.div(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  ", "\n  position:fixed;\n  margin-top: 24px;\n  bottom: 10vh;\n  right: 10vw;\n  align-items: center;\n  justify-content: center;\n  z-index: 1000000;\n  display: flex;\n"])), ''
 /* display: flex; */
 );
 
-var _templateObject$8;
-var Navigation = styled.nav(_templateObject$8 || (_templateObject$8 = _taggedTemplateLiteral(["\n  counter-reset: dot;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n"])));
-
 var _templateObject$9;
-var Dot = styled.button(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  counter-increment: dot;\n  width: 8px;\n  height: 8px;\n  border: ", ";\n\n  border-radius: 100%;\n  padding: 0;\n  display: block;\n  margin: 4px;\n  transition: opacity 0.3s, transform 0.3s;\n  cursor: ", ";\n  transform: scale(", ");\n\n  color: ", ";\n  background: ", ";\n\n  color: ", ";\n  background: ", ";\n\n  &:before {\n    content: counter(dot);\n    position: absolute;\n    bottom: calc(100% + 0.25em);\n    left: 50%;\n    opacity: 0;\n    transform: translate(-50%, 1em);\n    transition: 0.3s;\n    display: ", ";\n  }\n\n  &:hover {\n    background-color: currentColor;\n\n    &:before {\n      opacity: 0.5;\n      transform: translate(-50%, -2px);\n    }\n  }\n"])), function (props) {
+var Navigation = styled.nav(_templateObject$9 || (_templateObject$9 = _taggedTemplateLiteral(["\n  counter-reset: dot;\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  flex-wrap: wrap;\n"])));
+
+var _templateObject$a;
+var Dot = styled.button(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  counter-increment: dot;\n  width: 8px;\n  height: 8px;\n  border: ", ";\n\n  border-radius: 100%;\n  padding: 0;\n  display: block;\n  margin: 4px;\n  transition: opacity 0.3s, transform 0.3s;\n  cursor: ", ";\n  transform: scale(", ");\n\n  color: ", ";\n  background: ", ";\n\n  color: ", ";\n  background: ", ";\n\n  &:before {\n    content: counter(dot);\n    position: absolute;\n    bottom: calc(100% + 0.25em);\n    left: 50%;\n    opacity: 0;\n    transform: translate(-50%, 1em);\n    transition: 0.3s;\n    display: ", ";\n  }\n\n  &:hover {\n    background-color: currentColor;\n\n    &:before {\n      opacity: 0.5;\n      transform: translate(-50%, -2px);\n    }\n  }\n"])), function (props) {
   return props.current === props.index ? '0' : '1px solid #caccce';
 }, function (props) {
   return props.disabled ? 'not-allowed' : 'pointer';
@@ -461,8 +866,8 @@ var Dot = styled.button(_templateObject$9 || (_templateObject$9 = _taggedTemplat
   return props.showNumber ? 'block' : 'none';
 });
 
-var _templateObject$a;
-var SvgMaskWrapper = styled.div(_templateObject$a || (_templateObject$a = _taggedTemplateLiteral(["\n  opacity: 0.7;\n  width: 100%;\n  left: 0;\n  top: 0;\n  height: 100%;\n  position: fixed;\n  z-index: 99999;\n  pointer-events: none;\n  color: #000;\n"])));
+var _templateObject$b;
+var SvgMaskWrapper = styled.div(_templateObject$b || (_templateObject$b = _taggedTemplateLiteral(["\n  opacity: 0.7;\n  width: 100%;\n  left: 0;\n  top: 0;\n  height: 100%;\n  position: fixed;\n  z-index: 99999;\n  pointer-events: none;\n  color: #000;\n"])));
 function SvgMask(_ref) {
   var windowWidth = _ref.windowWidth,
       windowHeight = _ref.windowHeight,
@@ -1042,7 +1447,21 @@ function Tour(_ref) {
     className: cn(CN.helper.base, className, _defineProperty({}, CN.helper.isOpen, isOpen)),
     role: "dialog",
     "aria-labelledby": a11yOptions.ariaLabelledBy
-  }, CustomHelper ? /*#__PURE__*/React.createElement(CustomHelper, {
+  }, /*#__PURE__*/React.createElement(Pointer, {
+    windowWidth: state.w,
+    windowHeight: state.h,
+    targetWidth: state.width,
+    targetHeight: state.height,
+    targetTop: state.top,
+    targetLeft: state.left,
+    targetRight: state.right,
+    targetBottom: state.bottom,
+    helperWidth: state.helperWidth,
+    helperHeight: state.helperHeight,
+    helperPosition: state.helperPosition,
+    padding: maskSpace,
+    background: steps[current].backgroundColor ? steps[current].backgroundColor : 'white'
+  }), CustomHelper ? /*#__PURE__*/React.createElement(CustomHelper, {
     current: current,
     totalSteps: steps.length,
     gotoStep: goTo,
