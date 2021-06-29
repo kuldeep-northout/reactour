@@ -191,110 +191,6 @@ function Portal(_ref) {
   return createPortal(children, ref.current);
 }
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-Object.defineProperty(exports, "Shake", {
-  enumerable: true,
-  get: function get() {
-    return _Shake["default"];
-  }
-});
-Object.defineProperty(exports, "Shaking", {
-  enumerable: true,
-  get: function get() {
-    return _Shaking["default"];
-  }
-});
-Object.defineProperty(exports, "shakes", {
-  enumerable: true,
-  get: function get() {
-    return _shakes["default"];
-  }
-});
-exports["default"] = exports.ShakeCrazy = exports.ShakeRotate = exports.ShakeVertical = exports.ShakeHorizontal = exports.ShakeHard = exports.ShakeSlow = exports.ShakeLittle = void 0;
-
-var _react = _interopRequireDefault(require("react"));
-
-var _Shake = _interopRequireDefault(require("./Shake"));
-
-var _Shaking = _interopRequireDefault(require("./Shaking"));
-
-var _shakes = _interopRequireDefault(require("./shakes"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
-
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
-
-var ShakeLittle = function ShakeLittle(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "little"
-  }));
-};
-
-exports.ShakeLittle = ShakeLittle;
-
-var ShakeSlow = function ShakeSlow(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "slow"
-  }));
-};
-
-exports.ShakeSlow = ShakeSlow;
-
-var ShakeHard = function ShakeHard(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "hard"
-  }));
-};
-
-exports.ShakeHard = ShakeHard;
-
-var ShakeHorizontal = function ShakeHorizontal(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "horizontal"
-  }));
-};
-
-exports.ShakeHorizontal = ShakeHorizontal;
-
-var ShakeVertical = function ShakeVertical(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "vertical"
-  }));
-};
-
-exports.ShakeVertical = ShakeVertical;
-
-var ShakeRotate = function ShakeRotate(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "rotate"
-  }));
-};
-
-exports.ShakeRotate = ShakeRotate;
-
-var ShakeCrazy = function ShakeCrazy(props) {
-  return _react["default"].createElement(_Shaking["default"], _extends({}, props, {
-    type: "crazy"
-  }));
-};
-
-exports.ShakeCrazy = ShakeCrazy;
-var _default = {
-  Shake: _Shake["default"],
-  Shaking: _Shaking["default"],
-  shakes: _shakes["default"],
-  ShakeLittle: ShakeLittle,
-  ShakeSlow: ShakeSlow,
-  ShakeHard: ShakeHard,
-  ShakeHorizontal: ShakeHorizontal,
-  ShakeVertical: ShakeVertical,
-  ShakeRotate: ShakeRotate,
-  ShakeCrazy: ShakeCrazy
-};
-exports["default"] = _default;
-
 function getNodeRect(node) {
   if (!node) {
     return {};
@@ -540,10 +436,10 @@ left: -30px; */
   var p = pos(helperPosition);
   var l = helperLocation(helperPosition);
   if (p == 'center') return '0px';
-  if (p == 'top') return helperHeight - 2 + 'px';
-  if (p == 'bottom') return '-30px';
-  if (p == 'right') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 2 + 'px';
-  if (p == 'left') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 2 + 'px';
+  if (p == 'top') return helperHeight - 0 + 'px';
+  if (p == 'bottom') return '-28px';
+  if (p == 'right') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 10 + 'px';
+  if (p == 'left') return l[1] < targetTop ? targetTop - l[1] + 30 > helperHeight ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px' : targetTop - l[1] + 'px' : 10 + 'px';
   return 'rotate(0deg)';
 }, function (props) {
   var targetTop = props.targetTop,
@@ -652,8 +548,8 @@ left: -30px; */
   console.log('helperwidth', helperWidth);
   console.log('helperheight', helperHeight);
   if (p == 'center') return '0px';
-  if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px';
-  if (p == 'bottom') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px';
+  if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px';
+  if (p == 'bottom') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px';
   if (p == 'right') return -29 + 'px';
   if (p == 'left') return helperWidth - 2 + 'px';
   return '0px';
@@ -1460,7 +1356,7 @@ function Tour(_ref) {
     helperHeight: state.helperHeight,
     helperPosition: state.helperPosition,
     padding: maskSpace,
-    background: steps[current].backgroundColor ? steps[current].backgroundColor : 'white'
+    background: accentColor ? accentColor : 'white'
   }), CustomHelper ? /*#__PURE__*/React.createElement(CustomHelper, {
     current: current,
     totalSteps: steps.length,

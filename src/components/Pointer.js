@@ -1,4 +1,3 @@
-import { ShakeRotate } from 'reshake'
 import styled from 'styled-components'
 import * as hx from '../helpers'
 
@@ -249,20 +248,20 @@ const Pointer = styled.div`
     const l = helperLocation(helperPosition)
 
     if (p == 'center') return '0px'
-    if (p == 'top') return helperHeight - 2 + 'px'
-    if (p == 'bottom') return '-30px'
+    if (p == 'top') return helperHeight - 0 + 'px'
+    if (p == 'bottom') return '-28px'
     if (p == 'right')
       return l[1] < targetTop
         ? targetTop - l[1] + 30 > helperHeight
           ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px'
           : targetTop - l[1] + 'px'
-        : 2 + 'px'
+        : 10 + 'px'
     if (p == 'left')
       return l[1] < targetTop
         ? targetTop - l[1] + 30 > helperHeight
           ? targetTop - l[1] - (targetTop - l[1] + 34 - helperHeight) + 'px'
           : targetTop - l[1] + 'px'
-        : 2 + 'px'
+        : 10 + 'px'
     return 'rotate(0deg)'
   }};
   left: ${props => {
@@ -411,9 +410,9 @@ const Pointer = styled.div`
     console.log('helperheight', helperHeight)
 
     if (p == 'center') return '0px'
-    if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px'
+    if (p == 'top') return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px'
     if (p == 'bottom')
-      return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '2px'
+      return targetLeft > l[0] ? targetLeft - l[0] + 'px' : '10px'
     if (p == 'right') return -29 + 'px'
     if (p == 'left') return helperWidth - 2 + 'px'
     return '0px'

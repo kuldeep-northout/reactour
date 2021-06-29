@@ -415,11 +415,7 @@ function Tour({
             helperHeight={state.helperHeight}
             helperPosition={state.helperPosition}
             padding={maskSpace}
-            background={
-              steps[current].backgroundColor
-                ? steps[current].backgroundColor
-                : 'white'
-            }
+            background={accentColor ? accentColor : 'white'}
           />
           {CustomHelper ? (
             <CustomHelper

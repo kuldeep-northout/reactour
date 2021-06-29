@@ -57,8 +57,9 @@ function App() {
           isOpen={isTourOpen}
           maskClassName="mask"
           className="helper"
+          accentColor="#1b2c51"
           rounded={5}
-          accentColor={accentColor}
+          // accentColor={accentColor}
           CustomHelper={customComps ? MyCustomHelper : null}
           showNumber={false}
         />
