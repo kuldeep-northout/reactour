@@ -10,7 +10,7 @@ const Pointer = styled.div`
   left: -30px; */}
   width: 0;
   height: 0;
-  position: fixed;
+  position: absolute;
   ${'' /* top: 0;
   left: -30px; */}
   z-index: 1000000;
